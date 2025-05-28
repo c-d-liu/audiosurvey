@@ -1,0 +1,202 @@
+[
+    {
+        "page": 1,
+        "audio1": "audio/1a.wav",
+        "audio2": "audio/1b.wav"
+    },
+    {
+        "page": 2,
+        "audio1": "audio/2a.wav",
+        "audio2": "audio/2b.wav"
+    },
+    {
+        "page": 3,
+        "audio1": "audio/3a.wav",
+        "audio2": "audio/3b.wav"
+    },
+    {
+        "page": 4,
+        "audio1": "audio/4a.wav",
+        "audio2": "audio/4b.wav"
+    },
+    {
+        "page": 5,
+        "audio1": "audio/5a.wav",
+        "audio2": "audio/5b.wav"
+    },
+    {
+        "page": 6,
+        "audio1": "audio/6a.wav",
+        "audio2": "audio/6b.wav"
+    },
+    {
+        "page": 7,
+        "audio1": "audio/7a.wav",
+        "audio2": "audio/7b.wav"
+    },
+    {
+        "page": 8,
+        "audio1": "audio/8a.wav",
+        "audio2": "audio/8b.wav"
+    },
+    {
+        "page": 9,
+        "audio1": "audio/9a.wav",
+        "audio2": "audio/9b.wav"
+    },
+    {
+        "page": 10,
+        "audio1": "audio/10a.wav",
+        "audio2": "audio/10b.wav"
+    },
+    {
+        "page": 11,
+        "audio1": "audio/11a.wav",
+        "audio2": "audio/11b.wav"
+    },
+    {
+        "page": 12,
+        "audio1": "audio/12a.wav",
+        "audio2": "audio/12b.wav"
+    },
+    {
+        "page": 13,
+        "audio1": "audio/13a.wav",
+        "audio2": "audio/13b.wav"
+    },
+    {
+        "page": 14,
+        "audio1": "audio/14a.wav",
+        "audio2": "audio/14b.wav"
+    },
+    {
+        "page": 15,
+        "audio1": "audio/15a.wav",
+        "audio2": "audio/15b.wav"
+    },
+    {
+        "page": 16,
+        "audio1": "audio/16a.wav",
+        "audio2": "audio/16b.wav"
+    },
+    {
+        "page": 17,
+        "audio1": "audio/17a.wav",
+        "audio2": "audio/17b.wav"
+    },
+    {
+        "page": 18,
+        "audio1": "audio/18a.wav",
+        "audio2": "audio/18b.wav"
+    },
+    {
+        "page": 19,
+        "audio1": "audio/19a.wav",
+        "audio2": "audio/19b.wav"
+    },
+    {
+        "page": 20,
+        "audio1": "audio/20a.wav",
+        "audio2": "audio/20b.wav"
+    },
+    {
+        "page": 21,
+        "audio1": "audio/21a.wav",
+        "audio2": "audio/21b.wav"
+    },
+    {
+        "page": 22,
+        "audio1": "audio/22a.wav",
+        "audio2": "audio/22b.wav"
+    },
+    {
+        "page": 23,
+        "audio1": "audio/23a.wav",
+        "audio2": "audio/23b.wav"
+    },
+    {
+        "page": 24,
+        "audio1": "audio/24a.wav",
+        "audio2": "audio/24b.wav"
+    },
+    {
+        "page": 25,
+        "audio1": "audio/25a.wav",
+        "audio2": "audio/25b.wav"
+    },
+    {
+        "page": 26,
+        "audio1": "audio/26a.wav",
+        "audio2": "audio/26b.wav"
+    },
+    {
+        "page": 27,
+        "audio1": "audio/27a.wav",
+        "audio2": "audio/27b.wav"
+    },
+    {
+        "page": 28,
+        "audio1": "audio/28a.wav",
+        "audio2": "audio/28b.wav"
+    },
+    {
+        "page": 29,
+        "audio1": "audio/29a.wav",
+        "audio2": "audio/29b.wav"
+    },
+    {
+        "page": 30,
+        "audio1": "audio/30a.wav",
+        "audio2": "audio/30b.wav"
+    },
+    {
+        "page": 31,
+        "audio1": "audio/31a.wav",
+        "audio2": "audio/31b.wav"
+    },
+    {
+        "page": 32,
+        "audio1": "audio/32a.wav",
+        "audio2": "audio/32b.wav"
+    },
+    {
+        "page": 33,
+        "audio1": "audio/33a.wav",
+        "audio2": "audio/33b.wav"
+    },
+    {
+        "page": 34,
+        "audio1": "audio/34a.wav",
+        "audio2": "audio/34b.wav"
+    },
+    {
+        "page": 35,
+        "audio1": "audio/35a.wav",
+        "audio2": "audio/35b.wav"
+    },
+    {
+        "page": 36,
+        "audio1": "audio/36a.wav",
+        "audio2": "audio/36b.wav"
+    },
+    {
+        "page": 37,
+        "audio1": "audio/37a.wav",
+        "audio2": "audio/37b.wav"
+    },
+    {
+        "page": 38,
+        "audio1": "audio/38a.wav",
+        "audio2": "audio/38b.wav"
+    },
+    {
+        "page": 39,
+        "audio1": "audio/39a.wav",
+        "audio2": "audio/39b.wav"
+    },
+    {
+        "page": 40,
+        "audio1": "audio/40a.wav",
+        "audio2": "audio/40b.wav"
+    }
+]
