@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTS Audio Quality Survey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .answered::after {
+            content: ' ✓'; /* Checkmark indicator */
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold mb-4">TTS Audio Quality Survey</h1>
+
+        <div class="flex">
+            <!-- Sidebar Navigation -->
+            <div class="w-1/4">
+                <h2 class="text-xl font-semibold mb-2">Navigate</h2>
+                <ul id="navigation" class="space-y-1">
+                    <!-- Navigation links will be generated here -->
+                </ul>
+                <button onclick="submitResponses()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded w-full">Submit</button>
+            </div>
+
+            <!-- Main Content -->
+            <div class="w-3/4 bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-2" id="pageTitle">Page 1</h2>
+                
+                <div id="audioSection" class="mb-4">
+                    <p class="mb-2 font-semibold">Audio 1:</p>
+                    <audio id="audio1" controls></audio>
+
+                    <p class="mt-4 mb-2 font-semibold">Audio 2:</p>
+                    <audio id="audio2" controls></audio>
+                </div>
+
+                <div class="mb-4">
+                    <button onclick="recordResponse('same')" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Same Speaker</button>
+                    <button onclick="recordResponse('different')" class="bg-red-500 text-white px-4 py-2 rounded">Different Speakers</button>
+                </div>
+
+                <p class="italic">You can listen as many times as you want before making your decision.</p>
+                <p id="responseDisplay" class="mt-4 font-bold text-green-700"></p>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="prevPage()" class="bg-gray-400 text-white px-4 py-2 rounded">Previous</button>
+                    <button onclick="nextPage()" class="bg-gray-400 text-white px-4 py-2 rounded">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let data = [];
+        fetch('pages.json')
+            .then(response => response.json())
+            .then(json => {
+                data = json;
+                generateNavigation();
+                loadPage(0);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+
+
+        let responses = {};
+        let currentPageIndex = 0;
+        function generateNavigation() {
+            const nav = document.getElementById('navigation');
+            nav.innerHTML = '';  // Clear previous
+            data.forEach((pageData, index) => {
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.textContent = `Page ${pageData.page}`;
+                btn.className = 'bg-gray-300 hover:bg-gray-400 text-black px-3 py-1 rounded w-full text-left';
+                btn.id = `nav-page-${pageData.page}`;
+                btn.onclick = () => loadPage(index);
+                li.appendChild(btn);
+                nav.appendChild(li);
+            });
+        }
+
+        function loadPage(pageIndex) {
+            const pageData = data[pageIndex];
+            document.getElementById('pageTitle').textContent = `Page ${pageData.page}`;
+            document.getElementById('audio1').src = pageData.audio1;
+            document.getElementById('audio2').src = pageData.audio2;
+
+            // Show previously recorded response if available
+            const respDisplay = document.getElementById('responseDisplay');
+            if (responses[pageData.page]) {
+                respDisplay.textContent = `You selected: ${responses[pageData.page]}`;
+            } else {
+                respDisplay.textContent = '';
+            }
+
+            currentPageIndex = pageIndex;
+        }
+
+        function recordResponse(choice) {
+            const currentPage = data[currentPageIndex].page;
+            responses[currentPage] = choice;
+            document.getElementById('responseDisplay').textContent = `You selected: ${choice}`;
+            console.log(responses);
+            updateNavigationMarkers();
+        }
+
+        function nextPage() {
+            if (currentPageIndex < data.length - 1) {
+                loadPage(currentPageIndex + 1);
+            }
+        }
+
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                loadPage(currentPageIndex - 1);
+            }
+        }
+
+        function submitResponses() {
+            const blob = new Blob([JSON.stringify(responses, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'survey_responses.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function updateNavigationMarkers() {
+            data.forEach((pageData, index) => {
+                const navItem = document.getElementById(`nav-page-${pageData.page}`);
+                if (responses[pageData.page]) {
+                    navItem.classList.add('answered');
+                } else {
+                    navItem.classList.remove('answered');
+                }
+            });
+        }
+
+        // Generate sidebar navigation
+        const nav = document.getElementById('navigation');
+
+        // Load the first page
+        loadPage(0);
+    </script>
+</body>
+</html>
